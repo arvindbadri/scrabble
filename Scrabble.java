@@ -24,10 +24,13 @@ public class Scrabble {
 		sortAllWords(wordsCopy);
 		HashMap<String, ArrayList<Integer>> hash = putIntoHashMap(wordsCopy);
 		makeCombinationsAndCheck(hash,rack,scores,words);
-		p(maxWord);
-		
+		p(getMaxWord());
 	}
 	
+	private static String getMaxWord() {
+		return maxWord;
+	}
+
 	public static void makeCombinationsAndCheck(HashMap<String,ArrayList<Integer>> hash, String inputstring,int[] scores, ArrayList<String> words) {
 		StringBuilder output = new StringBuilder();
 		combine(hash,inputstring,output,scores,words);
